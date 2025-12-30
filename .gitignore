@@ -1,0 +1,9 @@
+# Python cache
+__pycache__/
+
+# IDE-specific configuration and state
+.idx/
+
+# AI-generated artifacts not part of the app
+GEMINI.md
+blueprint.md

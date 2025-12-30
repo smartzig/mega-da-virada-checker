@@ -1,14 +1,69 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega da Virada - Bee Solution</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1.2">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <div id="animation-overlay"></div>
+
+    <div class="container my-4">
+
+        <div id="winner-banner" class="alert alert-success bg-bees-blue-2 text-center p-3 mb-4 border-bees-yellow" role="alert">
+            <h4 id="winner-title" class="alert-heading"></h4>
+            <p id="winner-counts" class="mb-2"></p>
+            <hr>
+            <p id="winner-games" class="mb-0 font-monospace" style="font-size: 0.9em;"></p>
+        </div>
+
+
+        <div class="card bg-bees-blue mb-4">
+            <div class="card-body">
+                <h5 class="card-title text-center">Resultado Sorteado</h5>
+                <div class="d-flex justify-content-center align-items-center my-3">
+                    <div id="result-display" class="font-monospace">-</div>
+                </div>
+                <h5 class="card-title text-center mt-4">Selecione os 6 números sorteados</h5>
+                <div id="number-grid" class="d-flex flex-wrap justify-content-center p-3"></div>
+                <div class="text-center mt-2">
+                    <button id="clear-btn" class="btn btn-sm btn-outline-warning">Limpar Seleção</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-bees-blue">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0">Seus Jogos <span id="total-bets-display" class="badge bg-secondary ms-2"></span></h5>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="filter-switch">
+                    <label class="form-check-label filter-switch-label" for="filter-switch">Mostrar apenas jogos com acertos</label>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Jogo</th>
+                                <th>Números</th>
+                                <th>Acertos</th>
+                                <th>Números Acertados</th>
+                            </tr>
+                        </thead>
+                        <tbody id="games-table-body">
+                            <!-- Game rows will be inserted here by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js?v=1.2"></script>
 </body>
 </html>
